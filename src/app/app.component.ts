@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserServiceService } from './user-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  users: any;
+
+  constructor(private userService: UserServiceService){
+    userService.findAll().subscribe((data) => {
+      console.warn('data',data);
+      this.users=data;
+    });
+  }
+  
+  getUserFormData(data:any){
+    this.userService.save(data).subscribe((result)=>{
+      console.warn(result);
+    });
+    
+  }
 }
