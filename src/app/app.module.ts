@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { UserServiceService } from './user-service.service';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { UserServiceService } from './user-service.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularMultiSelectModule
   ],
   providers: [UserServiceService],
   bootstrap: [AppComponent]

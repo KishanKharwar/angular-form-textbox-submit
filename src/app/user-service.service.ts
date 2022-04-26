@@ -4,10 +4,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class UserServiceService {
 
+  //uncomented only for testing purpose 
+  // createUser(data: any) {
+  //   //Log user data in console
+  //   console.warn("User Name: " + data);
+  // }
+
   private usersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/spring-angular/users';
+    this.usersUrl = 'http://localhost:8080/new-user';
   }
 
   public findAll(){
